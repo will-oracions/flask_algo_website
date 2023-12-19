@@ -1,0 +1,21 @@
+<section id="exercice11">
+  <p>
+    Deux entiers positifs 𝑝 et 𝑞 sont dits copains si la somme des diviseurs de
+    𝑝 autre que 1 et 𝑝 est égale à 𝑞 et dans le même temps, la somme des
+    diviseurs de 𝑞 autre que 1 et 𝑞 est égale à 𝑝.
+  </p>
+  <form action="{{ url_for('exercice', num=11) }}" method="post">
+    <label for="numberP">Entrez le premier nombre (p):</label>
+    <input type="number" name="numberP" required />
+    <label for="numberQ">Entrez le deuxième nombre (q):</label>
+    <input type="number" name="numberQ" required />
+    <button type="submit">Vérifier si ce sont des copains</button>
+  </form>
+  {% if result is defined %}
+  <p>
+    {% if result %}Les nombres {{ input['numberP'] }} et {{ input['numberQ'] }}
+    sont copains.{% else %} Les nombres {{ input['numberP'] }} et {{
+    input['numberQ'] }} ne sont pas copains.{% endif %}
+  </p>
+  {% endif %}
+</section>

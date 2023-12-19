@@ -14,3 +14,10 @@ def is_prime(n):
         if n % i == 0:
             return False
     return True
+
+def are_amicable_numbers(p, q):
+    return sum_of_divisors(p) == q and sum_of_divisors(q) == p
+
+def sum_of_divisors(n):
+    return sum(i for i in range(1, n) if n % i == 0)
+

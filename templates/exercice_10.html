@@ -12,8 +12,8 @@
   </form>
   {% if result is defined %}
   <p>
-    {% if result %}Le nombre {{ input }} est premier.{% else %}Le nombre {{
-    input }} n'est pas premier.{% endif %}
+    {% if result %}Le nombre {{ input['n'] }} est premier.{% else %}Le nombre {{
+    input['n'] }} n'est pas premier.{% endif %}
   </p>
   {% endif %}
 </section>
