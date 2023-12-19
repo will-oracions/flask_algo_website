@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}" />
+    <title>{% block title %}Exercises Web App{% endblock %}</title>
+  </head>
+  <body>
+    <div class="container">
+      <input type="checkbox" id="toggleSidebar" />
+      <div class="sidebar">
+        <!-- <label for="toggleSidebar" class="toggle-btn"
+          >&#x2630; Toggle Sidebar</label
+        > -->
+        <h2>Exercices</h2>
+        <ul>
+          {% for exercise in exercises %}
+          <li>
+            <a href="{{ url_for('show_exercice', num=exercise['num']) }}"
+              >Exercice {{ exercise['num'] }}</a
+            >
+            <p>{{ exercise['title'] }}</p>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Ajout du bouton de menu pour mobile -->
+      <div class="mobile-menu" onclick="toggleMobileSidebar()">&#x2630;</div>
+
+      <div class="content">
+        <header>
+          <h1>{% block header %}Exercises Web App{% endblock %}</h1>
+        </header>
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<!-- exercice_9.html -->
+
+<section id="exercice9">
+  <p>Ecrire un algorithme qui calcule 𝑛! où 𝑛 est fourni par l'utilisateur.</p>
+  <form action="{{ url_for('exercice', num=9) }}" method="post">
+    <label for="numberInput">Entrez la valeur de n:</label>
+    <input type="number" name="numberInput" required />
+    <button type="submit">Calculer 𝑛!</button>
+  </form>
+  {% if result is defined %}
+  <p>Le résultat est : {{ result }}</p>
+  {% endif %}
+</section>
