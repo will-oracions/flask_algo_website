@@ -217,7 +217,7 @@ p {
 /* Ajoutez ici vos règles CSS spécifiques pour le contenu d'exercice */
 h1 {
     color: #3498db;
-    text-align: center; /* Centre le texte dans l'en-tête */
+    text-align: center;
 }
 
 #exercice9,
@@ -234,4 +234,39 @@ textarea {
     padding: 10px;
     box-sizing: border-box; /* Ajuste la taille du textarea pour inclure le padding */
     margin-bottom: 10px;
+}
+
+/* about.css */
+#about {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: linear-gradient(to right, #2980B9, #6DD5FA); /* Dégradé linéaire bleu */
+    color: #fff; /* Texte en blanc sur fond bleu */
+}
+
+#about h2 {
+    color: #fff; /* Titre en blanc */
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+}
+
+#about ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#about li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+#about li::before {
+    content: '\2022';
+    color: #fff;
+    font-size: 24px;
+    position: absolute;
+    left: 0;
 }
