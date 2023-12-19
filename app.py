@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from algorithms import calculate_factorial, is_prime, are_amicable_numbers
+from algorithms import calculate_factorial, is_prime, are_amicable_numbers, calculate_schtroumpf
 
 app = Flask(__name__)
 
@@ -38,10 +38,8 @@ def exercice(num):
     if request.method == 'POST':
         try:
             result = calculate_exercice(num, request.form)
-        except ValueError:
-            errorMessage = 'Veuillez entrer un nombre entier positif.'
-
-        print(errorMessage)
+        except ValueError as error:
+            errorMessage = str(error)
     return render_template(f'exercice.html', errorMessage=errorMessage, input=request.form, num=str(num), result=result, exercises=exercises)
 
 def calculate_exercice(num, form):
@@ -57,6 +55,11 @@ def calculate_exercice(num, form):
         p = int(form['numberP'])
         q = int(form['numberQ'])
         return are_amicable_numbers(p, q)
+    
+    if num == 17:
+        arr1 = form['arrayA']
+        arr2 = form['arrayB']
+        return calculate_schtroumpf(arr1, arr2)
     # Ajoutez d'autres calculs d'exercices en important les fonctions nécessaires depuis algorithms.py
     return None
 

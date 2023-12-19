@@ -1,0 +1,24 @@
+<section id="exercice17">
+  <p>
+    Calculer le schtroumpf des deux tableaux A et B. Le schtroumpf se calcule en
+    faisant la somme des produits de chaque élément du premier tableau par
+    chaque élément du second tableau.
+  </p>
+  <form action="{{ url_for('exercice', num=17) }}" method="post">
+    <label for="arrayA"
+      >Entrez les éléments du tableau A (séparés par des virgules):</label
+    >
+    <input type="text" name="arrayA" required />
+    <label for="arrayB"
+      >Entrez les éléments du tableau B (séparés par des virgules):</label
+    >
+    <input type="text" name="arrayB" required />
+    <button type="submit">Calculer le schtroumpf</button>
+  </form>
+  {% if result is defined %}
+  <p>
+    Le schtroumpf de [{{ input['arrayA'] }}] et de [{{ input['arrayB']}}] est :
+    {{ result }}
+  </p>
+  {% endif %}
+</section>
