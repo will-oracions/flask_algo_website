@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from algorithms import calculate_factorial
+from algorithms import calculate_factorial, is_prime
 
 app = Flask(__name__)
 
@@ -43,11 +43,14 @@ def exercice(num):
             errorMessage = 'Veuillez entrer un nombre entier positif.'
 
         print(errorMessage)
-    return render_template(f'exercice.html', errorMessage=errorMessage, num=str(num), result=result, exercises=exercises)
+    return render_template(f'exercice.html', errorMessage=errorMessage, input=n, num=str(num), result=result, exercises=exercises)
 
 def calculate_exercice(num, n):
     if num == 9:
         return calculate_factorial(n)
+    
+    if num == 10:
+        return is_prime(n)
     # Ajoutez d'autres calculs d'exercices en important les fonctions nécessaires depuis algorithms.py
     return None
 

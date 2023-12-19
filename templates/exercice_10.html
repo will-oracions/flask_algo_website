@@ -1,5 +1,19 @@
 <!-- exercice_10.html -->
 
 <section id="exercice10">
-  <!-- Ajoutez ici l'interface pour l'exercice 10 -->
+  <p>
+    Ecrire un algorithme qui prend un entier positif fourni par l'utilisateur et
+    détermine si l'entier en question est premier ou non.
+  </p>
+  <form action="{{ url_for('exercice', num=10) }}" method="post">
+    <label for="numberInput">Entrez un nombre:</label>
+    <input type="number" name="numberInput" required />
+    <button type="submit">Vérifier si c'est premier</button>
+  </form>
+  {% if result is defined %}
+  <p>
+    {% if result %}Le nombre {{ input }} est premier.{% else %}Le nombre {{
+    input }} n'est pas premier.{% endif %}
+  </p>
+  {% endif %}
 </section>
