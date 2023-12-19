@@ -1,7 +1,9 @@
 <!-- exercice.html -->
 {% extends 'base.html' %} {% block title %}Exercice {{ num }}{% endblock %} {%
 block header %}Exercice {{ num }}{% endblock %} {% block content %} {% include
-'exercice_' + num + '.html' %}
-<div style="background-color: red; color: white">Errr{{ errorMessage }}</div>
+'exercice_' + num + '.html' %} {% if (errorMessage) : %}
 
-{% endblock %}
+<div style="background-color: #e74c3c; color: white; padding: 4px">
+  Errr{{ errorMessage }}
+</div>
+{% endif %} {% endblock %}
