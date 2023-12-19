@@ -1,0 +1,20 @@
+<section id="exercice22">
+  <p>
+    Faire la lecture d'une matrice carrée 𝐴, son degré 𝑛 et calculer la trace de
+    𝐴. La trace de 𝐴 est définie comme la somme des éléments de la diagonale
+    principale de 𝐴.
+  </p>
+  <form action="{{ url_for('exercice', num=22) }}" method="post">
+    <label for="degree">Entrez le degré de la matrice carrée:</label>
+    <input type="number" name="degree" required />
+    <label for="matrix"
+      >Entrez les éléments de la matrice (séparés par des virgules, lignes
+      séparées par des points-virgules):</label
+    >
+    <textarea name="matrix" required></textarea>
+    <button type="submit">Calculer la trace</button>
+  </form>
+  {% if result is defined %}
+  <p>La trace de la matrice est {{ input['matrix'] }} : {{ result }}</p>
+  {% endif %}
+</section>

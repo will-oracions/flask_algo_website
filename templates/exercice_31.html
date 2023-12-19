@@ -1,0 +1,22 @@
+<!-- exercice_31.html -->
+<section id="exercice31">
+  <p>
+    On veut effectuer le classement en temps réel des participants à une course
+    en fonction de leur arrivée. À chaque arrivée de coureur, on enregistrera ce
+    coureur (son numéro de dossard, son nom et le temps qu'il vient de faire),
+    en l'insérant dans la liste de ceux qui sont déjà arrivés, puis on
+    réaffichera le classement provisoire.
+  </p>
+  <form action="{{ url_for('exercice', num=31) }}" method="post">
+    <label for="runner_number">Numéro de dossard:</label>
+    <input type="number" name="runner_number" required />
+    <label for="runner_name">Nom du coureur:</label>
+    <input type="text" name="runner_name" required />
+    <label for="runner_time">Temps réalisé (en secondes):</label>
+    <input type="number" name="runner_time" required />
+    <button type="submit">Enregistrer l'arrivée</button>
+  </form>
+  {% if result is defined %}
+  <p>Classement provisoire : {{ ranking }}</p>
+  {% endif %}
+</section>

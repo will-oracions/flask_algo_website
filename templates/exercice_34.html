@@ -1,0 +1,16 @@
+<!-- exercice_34.html -->
+
+<section id="exercice34">
+  <p>
+    La notation polonaise inversée consiste à écrire les opérandes avant les
+    opérateurs. Exemple : 3 5 4 * + 2 *
+  </p>
+  <form action="{{ url_for('exercice', num=34) }}" method="post">
+    <label for="expression">Expression:</label>
+    <input type="text" name="expression" required />
+    <button type="submit">Évaluer l'expression</button>
+  </form>
+  {% if result is defined %}
+  <p>Résultat de l'expression : {{ result }}</p>
+  {% endif %}
+</section>

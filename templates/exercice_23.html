@@ -1,0 +1,20 @@
+<section id="exercice23">
+  <p>
+    Faire la lecture d'une matrice carrée 𝐴, son degré 𝑛 et afficher la matrice
+    transposée de 𝐴. La matrice transposée est obtenue en échangeant les lignes
+    et les colonnes de 𝐴.
+  </p>
+  <form action="{{ url_for('exercice', num=23) }}" method="post">
+    <label for="degree">Entrez le degré de la matrice carrée:</label>
+    <input type="number" name="degree" required />
+    <label for="matrix"
+      >Entrez les éléments de la matrice (séparés par des virgules, lignes
+      séparées par des points-virgules):</label
+    >
+    <textarea name="matrix" required></textarea>
+    <button type="submit">Calculer la matrice transposée</button>
+  </form>
+  {% if result is defined %}
+  <p>La matrice transposée {{ input['matrix']}} est :<br />{{ result|safe }}</p>
+  {% endif %}
+</section>

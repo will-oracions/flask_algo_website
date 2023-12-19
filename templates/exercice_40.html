@@ -1,0 +1,16 @@
+<!-- exercice_40.html -->
+
+<section id="exercice40">
+  <p>
+    Effectuez la conjugaison des verbes du premier groupe au présent de
+    l'indicatif et au futur en français.
+  </p>
+  <form action="{{ url_for('exercice', num=40) }}" method="post">
+    <label for="verb">Verbe du premier groupe:</label>
+    <input type="text" name="verb" required />
+    <button type="submit">Conjuguer</button>
+  </form>
+  {% if result is defined %}
+  <p>Conjugaison : {{ result }}</p>
+  {% endif %}
+</section>

@@ -4,6 +4,6 @@ block header %}Exercice {{ num }}{% endblock %} {% block content %} {% include
 'exercice_' + num + '.html' %} {% if (errorMessage) : %}
 
 <div style="background-color: #e74c3c; color: white; padding: 4px">
-  Errr{{ errorMessage }}
+  {{ errorMessage }}
 </div>
 {% endif %} {% endblock %}

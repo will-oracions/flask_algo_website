@@ -1,0 +1,20 @@
+<!-- exercice_33.html -->
+
+<section id="exercice33">
+  <p>
+    Simulation de la salle d'attente de l'entreprise Eneo au Cameroun. Gérez la
+    réception des clients en fonction de leur arrivée.
+  </p>
+  <form action="{{ url_for('exercice', num=33) }}" method="post">
+    <label for="client_number">Numéro du client:</label>
+    <input type="number" name="client_number" required />
+    <label for="client_name">Nom du client:</label>
+    <input type="text" name="client_name" required />
+    <label for="arrival_time">Heure d'arrivée:</label>
+    <input type="time" name="arrival_time" required />
+    <button type="submit">Enregistrer l'arrivée</button>
+  </form>
+  {% if result is defined %}
+  <p>Le prochain client à servir est : {{ result }}</p>
+  {% endif %}
+</section>

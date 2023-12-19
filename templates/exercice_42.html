@@ -1,0 +1,13 @@
+<!-- exercice_42.html -->
+
+<section id="exercice42">
+  <p>Effectuez le tri par insertion d'une liste en utilisant les tableaux.</p>
+  <form action="{{ url_for('exercice', num=42) }}" method="post">
+    <label for="input_list">Liste d'entiers (séparés par des virgules):</label>
+    <input type="text" name="input_list" required />
+    <button type="submit">Trier</button>
+  </form>
+  {% if result is defined %}
+  <p>Liste triée : {{ result }}</p>
+  {% endif %}
+</section>

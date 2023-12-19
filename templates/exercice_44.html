@@ -1,0 +1,15 @@
+<!-- exercice_44.html -->
+
+<section id="exercice44">
+  <p>Déterminez l'élément se trouvant à la ième position d'une liste.</p>
+  <form action="{{ url_for('exercice', num=44) }}" method="post">
+    <label for="input_list">Liste d'entiers (séparés par des virgules):</label>
+    <input type="text" name="input_list" required />
+    <label for="position">Position (i):</label>
+    <input type="number" name="position" required />
+    <button type="submit">Trouver l'élément</button>
+  </form>
+  {% if result is defined %}
+  <p>Élément à la ième position : {{ result }}</p>
+  {% endif %}
+</section>

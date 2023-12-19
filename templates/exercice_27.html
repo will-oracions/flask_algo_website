@@ -1,0 +1,40 @@
+<!-- exercice_27.html -->
+
+<section id="exercice27">
+  <p>Écrire les fonctions suivantes :</p>
+  <ul>
+    <li>
+      <strong>occurrences(x, l):</strong> détermine le nombre d'occurrences de x
+      dans l.
+    </li>
+    <li>
+      <strong>concatener(l1, l2):</strong> fusionne les deux listes l1 et l2.
+    </li>
+    <li>
+      <strong>recherche(x, l):</strong> renvoie la position de x dans l s'il
+      existe et -1 sinon.
+    </li>
+  </ul>
+  <form action="{{ url_for('exercice', num=27) }}" method="post">
+    <label for="function">Choisissez une fonction à tester :</label>
+    <select name="function" required>
+      <option value="occurrences">occurrences</option>
+      <option value="concatener">concatener</option>
+      <option value="recherche">recherche</option>
+    </select>
+    <label for="list1"
+      >Entrez la première liste (séparée par des virgules):</label
+    >
+    <input type="text" name="list1" required />
+    <label for="list2"
+      >Entrez la deuxième liste (séparée par des virgules):</label
+    >
+    <input type="text" name="list2" />
+    <label for="element">Entrez l'élément pour la recherche :</label>
+    <input type="text" name="element" />
+    <button type="submit">Tester la fonction</button>
+  </form>
+  {% if result is defined %}
+  <p>Résultat : {{ result }}</p>
+  {% endif %}
+</section>

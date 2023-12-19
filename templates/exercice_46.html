@@ -1,0 +1,15 @@
+<!-- exercice_46.html -->
+
+<section id="exercice46">
+  <p>Calculez la somme des produits d'éléments de deux tableaux.</p>
+  <form action="{{ url_for('exercice', num=46) }}" method="post">
+    <label for="array_a">Tableau A (séparé par des virgules):</label>
+    <input type="text" name="array_a" required />
+    <label for="array_b">Tableau B (séparé par des virgules):</label>
+    <input type="text" name="array_b" required />
+    <button type="submit">Calculer</button>
+  </form>
+  {% if result is defined %}
+  <p>Résultat : {{ result }}</p>
+  {% endif %}
+</section>

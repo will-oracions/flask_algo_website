@@ -1,0 +1,15 @@
+<!-- exercice_matrices_creuse.html -->
+
+<section id="exerciceMatricesCreuse">
+  <p>Calculez la somme des éléments des matrices creuses A et B.</p>
+  <form action="{{ url_for('exercice', num='matrices_creuse') }}" method="post">
+    <label for="matrix_a">Matrice A:</label>
+    <textarea name="matrix_a" rows="4" cols="50" required></textarea>
+    <label for="matrix_b">Matrice B:</label>
+    <textarea name="matrix_b" rows="4" cols="50" required></textarea>
+    <button type="submit">Calculer</button>
+  </form>
+  {% if result is defined %}
+  <p>Résultat : {{ result }}</p>
+  {% endif %}
+</section>

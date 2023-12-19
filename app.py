@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
-from algorithms import calculate_factorial, is_prime, are_amicable_numbers, calculate_schtroumpf
+from collections import deque
+from algorithms import *
 
 app = Flask(__name__)
 
@@ -60,7 +61,85 @@ def calculate_exercice(num, form):
         arr1 = form['arrayA']
         arr2 = form['arrayB']
         return calculate_schtroumpf(arr1, arr2)
-    # Ajoutez d'autres calculs d'exercices en important les fonctions nécessaires depuis algorithms.py
+    
+    if num == 22:
+        degree = form['degree']
+        matrix = form['matrix']
+        return calculate_matrix_trace(degree, matrix)
+    
+    if num == 23:
+        degree = form['degree']
+        matrix = form['matrix']
+        return calculate_transposed_matrix(degree, matrix)
+    
+    if num == 27:
+        list1 = form['list1']
+        list2 = form['list2']
+        element = form['element']
+        # return calculate_transposed_matrix(degree, matrix)
+        return '--'
+    
+    if num == 31:
+        runners = []
+
+        runner_number = form['runner_number']
+        runner_name = form['runner_name']
+        runner_time = form['runner_time']
+
+        new_runner = Runner(runner_number, runner_name, runner_time)
+        runners.append(new_runner)
+
+        # return update_ranking(runners)
+        return '--'
+
+    if num == 33:
+        client_queue = deque()
+
+        client_number = int(form['client_number'])
+        client_name = form['client_name']
+        arrival_time = form['arrival_time']
+
+        new_client = Client(client_number, client_name, arrival_time)
+        add_client(client_queue, new_client)
+
+        next_client = serve_next_client(client_queue)
+        return next_client
+
+    if num == 34:
+        expression = request.form['expression']
+        return evaluate_expression(expression)
+
+    if num == 40:
+        verb = request.form['verb']
+        return conjugate_verb(verb)
+
+    if num == 41:
+        input_list = request.form['input_list']
+        return selection_sort(input_list)
+
+    if num == 42:
+        input_list = request.form['input_list']
+        return insertion_sort(input_list)
+    if num == 43:
+        input_list = request.form['input_list']
+        return bubble_sort(input_list)
+    if num == 44:
+        input_list = request.form['input_list']
+        position = int(request.form['position'])
+        return element_at_position(input_list, position)
+    
+    if num == 45:
+        input_list = request.form['input_list']
+        element = int(request.form['element'])
+        position = int(request.form['position'])
+        linked_list = create_linked_list(input_list)
+        return add_element_at_position(linked_list, element, position)
+
+    if num == 46:
+        matrix_a = request.form['matrix_a']
+        matrix_b = request.form['matrix_b']
+        return calculate_sparse_matrix_sum(matrix_a, matrix_b)
+
     return None
 
 
