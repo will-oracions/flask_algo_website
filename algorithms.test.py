@@ -32,8 +32,9 @@ class TestAlgorithms(unittest.TestCase):
 
     # Exercice 11
     def test_are_amicable_numbers(self):
-        self.assertTrue(are_amicable_numbers(220, 284))
-        self.assertTrue(are_amicable_numbers(1184, 1210))
+        self.assertTrue(are_amicable_numbers(48, 75))
+        self.assertFalse(are_amicable_numbers(220, 284))
+        self.assertFalse(are_amicable_numbers(1184, 1210))
         self.assertFalse(are_amicable_numbers(220, 285))
         self.assertFalse(are_amicable_numbers(1184, 1211))
 

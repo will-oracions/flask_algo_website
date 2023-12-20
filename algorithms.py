@@ -20,24 +20,32 @@ def are_amicable_numbers(p, q):
     return sum_of_divisors(p) == q and sum_of_divisors(q) == p
 
 def sum_of_divisors(n):
-    return sum(i for i in range(1, n) if n % i == 0)
+    return sum(i for i in range(2, n) if n % i == 0)
 
 # schtroumpf
-def calculate_schtroumpf(array_a, array_b):
-    elements_a = [int(x.strip()) for x in array_a.split(',')]
-    elements_b = [int(x.strip()) for x in array_b.split(',')]
+def calculate_schtroumpf(str_array1, str_array2):
+    array1 = [int(x) for x in str_array1.split(',')]
+    array2 = [int(x) for x in str_array2.split(',')]
 
-    if len(elements_a) != len(elements_b):
-        raise ValueError("Les tableaux doivent avoir la même longueur.")
+    schtroumpf_sum = 0
 
-    return sum(a * b for a, b in zip(elements_a, elements_b))
+    min_size = min(len(array1), len(array2))
+
+    for i in range(0, min_size):
+        schtroumpf_sum += array1[i] * array2[i]
+
+    return schtroumpf_sum
 
 # Trace d'une matrice
 def calculate_matrix_trace(degree, matrix):
+    print(matrix)
+    matrix = matrix.replace(' ', '')
+
     rows = matrix.split(';')
     elements = [list(map(int, row.split(','))) for row in rows]
+    print(elements)
 
-    if len(elements) != degree or any(len(row) != degree for row in elements):
+    if len(elements) != int(degree) or any(len(row) != degree for row in elements):
         raise ValueError("La matrice doit être de degré carré.")
 
     return sum(elements[i][i] for i in range(degree))

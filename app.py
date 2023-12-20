@@ -63,12 +63,12 @@ def calculate_exercice(num, form):
         return calculate_schtroumpf(arr1, arr2)
     
     if num == 22:
-        degree = form['degree']
+        degree = int(form['degree'])
         matrix = form['matrix']
         return calculate_matrix_trace(degree, matrix)
     
     if num == 23:
-        degree = form['degree']
+        degree = int(form['degree'])
         matrix = form['matrix']
         return calculate_transposed_matrix(degree, matrix)
     
