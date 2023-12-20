@@ -11,9 +11,9 @@ exercises = [
     {"num": "17", "title": "Le schtroumpf"},
     {"num": "22", "title": "Lecture et trace d'une matrice carrée"},
     {"num": "23", "title": "Matrice transposée"},
-    {"num": "27", "title": "Fonctions occurrences, concatener, recherche"},
-    {"num": "31", "title": "Gestion d'une course"},
-    {"num": "33", "title": "File"},
+    # {"num": "27", "title": "Fonctions occurrences, concatener, recherche"},
+    # {"num": "31", "title": "Gestion d'une course"},
+    # {"num": "33", "title": "File"},
     {"num": "34", "title": "Notation polonaise inversée"},
     {"num": "40", "title": "Conjugaison des verbes du premier groupe"},
     {"num": "41", "title": "Trie par sélection (tableaux et listes chainées)"},
@@ -21,7 +21,7 @@ exercises = [
     {"num": "43", "title": "Trie bulle (tableaux et listes chainées)"},
     {"num": "44", "title": "Elément à la ième position dans une liste chainée"},
     # {"num": "45", "title": "Ajout d'un élément à une position donnée dans une liste chainée"},
-    {"num": "46", "title": "Matrices creuses"},
+    # {"num": "46", "title": "Matrices creuses"},
 ]
 
 @app.route('/')
