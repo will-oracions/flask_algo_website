@@ -135,6 +135,8 @@ def perform_operation(operand1, operand2, operator):
 
 # Exercice 40
 def conjugate_verb(verb):
+    if (verb == "aller"):
+        raise ValueError("Le verbe n'est pas du premier groupe.")
     if (verb[-2:] != "er"):
         raise ValueError("Le verbe n'est pas du premier groupe.")
     present_conjugation = conjugate_present(verb)
