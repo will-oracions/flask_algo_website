@@ -20,7 +20,7 @@ exercises = [
     {"num": "42", "title": "Trie par insertion (tableaux et listes chainées)"},
     {"num": "43", "title": "Trie bulle (tableaux et listes chainées)"},
     {"num": "44", "title": "Elément à la ième position dans une liste chainée"},
-    {"num": "45", "title": "Ajout d'un élément à une position donnée dans une liste chainée"},
+    # {"num": "45", "title": "Ajout d'un élément à une position donnée dans une liste chainée"},
     {"num": "46", "title": "Matrices creuses"},
 ]
 
