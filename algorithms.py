@@ -127,21 +127,23 @@ def perform_operation(operand1, operand2, operator):
 
 # Exercice 40
 def conjugate_verb(verb):
+    if (verb[-2:] != "er"):
+        raise ValueError("Le verbe n'est pas du premier groupe.")
     present_conjugation = conjugate_present(verb)
     future_conjugation = conjugate_future(verb)
-    return f"Au présent : {present_conjugation}, Au futur : {future_conjugation}"
+    return f"""<br/><br/>Au présent : <br/><br/>{present_conjugation} <br><br> Au futur : <br/><br/>{future_conjugation}"""
 
 def conjugate_present(verb):
-    subject_pronouns = ['Je', 'Tu', 'Il/Elle/On', 'Nous', 'Vous', 'Ils/Elles']
+    subject_pronouns = ['Je', 'Tu', 'Il ou elle', 'Nous', 'Vous', 'Ils ou elles']
     endings = ['e', 'es', 'e', 'ons', 'ez', 'ent']
     conjugation = [f"{pronoun} {verb[:-2]}{end}" for pronoun, end in zip(subject_pronouns, endings)]
-    return ', '.join(conjugation)
+    return '<br/> '.join(conjugation)
 
 def conjugate_future(verb):
-    subject_pronouns = ['Je', 'Tu', 'Il/Elle/On', 'Nous', 'Vous', 'Ils/Elles']
+    subject_pronouns = ['Je', 'Tu', 'Il ou elle', 'Nous', 'Vous', 'Ils ou elles']
     endings = ['ai', 'as', 'a', 'ons', 'ez', 'ont']
-    conjugation = [f"{pronoun} {verb}r{end}" for pronoun, end in zip(subject_pronouns, endings)]
-    return ', '.join(conjugation)
+    conjugation = [f"{pronoun} {verb}{end}" for pronoun, end in zip(subject_pronouns, endings)]
+    return '<br /> '.join(conjugation)
 
 # Exercice 41
 def selection_sort(input_list):
@@ -185,7 +187,7 @@ def bubble_sort(input_list):
 
 # Exercice 44
 def element_at_position(input_list, position):
-    elements = [int(x) for x in input_list.split()]
+    elements = [int(x) for x in input_list.split(',')]
 
     if 0 <= position < len(elements):
         return elements[position]

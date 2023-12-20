@@ -11,6 +11,6 @@
     <button type="submit">Conjuguer</button>
   </form>
   {% if result is defined %}
-  <p>Conjugaison : {{ result }}</p>
+  <p>Conjugaison : {{ result | safe }}</p>
   {% endif %}
 </section>
